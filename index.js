@@ -1,7 +1,20 @@
+import { createRoot } from 'react-dom/client';
+
+function NavigationBar() {
+  // TODO: Actually implement a navigation bar
+  return <h1>Hello from React!</h1>;
+}
+
+const domNode = document.getElementById('navigation');
+const root = createRoot(domNode);
+root.render(<NavigationBar />);
+
 const getUsers = async () => {
     const url = 'https://api.artic.edu/api/v1/artworks';
     const response = await fetch(url);
-    return await response.json();
+    const data = await response.json();
+    console.log(data)
+    return data.data;
   };
   
   const render = (data) => {
